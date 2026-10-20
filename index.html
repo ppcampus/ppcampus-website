@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PP Campus | Accountancy &amp; Business Studies Coaching, Sri Ganganagar</title>
+<meta name="description" content="PP Campus by Pragyesh Bhardwaj (PP Sir) – Accountancy and Business Studies coaching for Class 11 &amp; 12, RBSE and CBSE, at Basanti Chowk, Sri Ganganagar. Also PP Campus Library.">
+<meta property="og:title" content="PP Campus – Accountancy &amp; Business Studies, Sri Ganganagar">
+<meta property="og:description" content="Class 11 &amp; 12 Commerce coaching by PP Sir. RBSE &amp; CBSE. Regular tests, recorded lectures, PP Campus Library.">
+<meta name="theme-color" content="#0f3d5e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbf8f3; --surface:#ffffff; --ink:#1b2430; --muted:#5b6675;
+  --brand:#0f3d5e; --brand-ink:#ffffff; --accent:#e8a33d; --accent-ink:#1b2430;
+  --line:#e6dfd3; --soft:#f1ebe0; --ok:#1f7a4d;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#11161d; --surface:#18202a; --ink:#ecf0f4; --muted:#a7b2bf;
+    --brand:#7fb8e0; --brand-ink:#0b1219; --accent:#f0b65a; --accent-ink:#11161d;
+    --line:#2a3542; --soft:#1e2833; --ok:#5fcf95;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.2;margin:0 0 .5em}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem)}
+.eyebrow{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:Fraunces,serif;font-weight:700;font-size:1.35rem;text-decoration:none;color:var(--brand)}
+.logo span{color:var(--accent)}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--muted);font-weight:500}
+.nav ul a:hover{color:var(--ink)}
+@media(max-width:760px){.nav ul{display:none}}
+
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{filter:brightness(1.05)}
+.btn-ghost{border-color:var(--brand);color:var(--brand);background:transparent}
+
+/* hero */
+.hero{padding:72px 0 56px}
+.hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(2.1rem,5.5vw,3.4rem)}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:36ch}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{background:var(--soft);border:1px solid var(--line);color:var(--ink);padding:5px 12px;border-radius:999px;font-size:.88rem;font-weight:500}
+.hero-card{background:var(--brand);color:var(--brand-ink);border-radius:20px;padding:28px}
+.hero-card h3{font-size:1.4rem}
+.hero-card ul{margin:0;padding-left:1.1em}
+.hero-card li{margin:.35em 0}
+
+section{padding:64px 0}
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(max-width:860px){.grid3,.grid2{grid-template-columns:1fr}}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:24px}
+.alt .card{background:var(--bg)}
+.card h3{font-size:1.25rem}
+.card p{color:var(--muted);margin:0}
+.num{font-family:Fraunces,serif;font-size:2rem;color:var(--accent);line-height:1}
+
+/* offer */
+.offer{background:var(--brand);color:var(--brand-ink);border-radius:22px;padding:36px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:start}
+@media(max-width:860px){.offer{grid-template-columns:1fr;padding:24px}}
+.offer h2{color:var(--brand-ink)}
+.offer .eyebrow{color:var(--accent)}
+form{background:var(--surface);color:var(--ink);border-radius:16px;padding:22px;display:grid;gap:12px}
+label{font-weight:600;font-size:.9rem}
+input,select{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px}
+.small{font-size:.85rem;color:var(--muted)}
+
+/* contact */
+.contact-list{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.contact-list b{display:block;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+iframe{width:100%;height:320px;border:0;border-radius:16px}
+
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:30;background:#25d366;color:#0b1a10;font-weight:700;text-decoration:none;padding:12px 16px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo">PP <span>Campus</span></a>
+    <ul>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#why">Why PP Campus</a></li>
+      <li><a href="#library">Library</a></li>
+      <li><a href="#offer">Free Pre-Boards</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:+918562013974" class="btn btn-ghost" style="padding:8px 14px">Call</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Sri Ganganagar · Class 11 &amp; 12 Commerce</div>
+        <h1>Accountancy &amp; Business Studies, taught by <em>PP Sir</em>.</h1>
+        <p class="lead">Clear concepts, regular tests and personal attention for RBSE and CBSE students at PP Campus, Basanti Chowk.</p>
+        <div class="ctas">
+          <a href="#offer" class="btn btn-primary">Book 2 Free Pre-Boards</a>
+          <a href="https://wa.me/918562013974?text=Hello%20PP%20Campus%2C%20I%20want%20to%20know%20about%20admission." class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+        <div class="chips">
+          <span class="chip">RBSE</span><span class="chip">CBSE</span><span class="chip">Class 11</span><span class="chip">Class 12</span><span class="chip">Evening batches</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>At PP Campus you get</h3>
+        <ul>
+          <li>Accountancy &amp; Business Studies by Pragyesh Bhardwaj (PP Sir)</li>
+          <li>Regular tests, checked and discussed</li>
+          <li>Recorded lectures in the PP Campus app for missed classes</li>
+          <li>Disciplined, focused study environment</li>
+          <li>PP Campus Library for self-study</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="courses" class="alt">
+    <div class="wrap">
+      <div class="eyebrow">Courses</div>
+      <h2>What we teach</h2>
+      <div class="grid2" style="margin-top:24px">
+        <div class="card">
+          <h3>Accountancy</h3>
+          <p>Class 11 and Class 12, RBSE and CBSE. From journal entries and ledgers to partnership, company accounts and financial statement analysis, built step by step with plenty of practice.</p>
+        </div>
+        <div class="card">
+          <h3>Business Studies</h3>
+          <p>Class 11 and Class 12, RBSE and CBSE. Concept-wise teaching with board-style answer writing, so students know exactly how to score in descriptive questions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="eyebrow">Why PP Campus</div>
+      <h2>Built for board-exam results</h2>
+      <div class="grid3" style="margin-top:24px">
+        <div class="card"><div class="num">01</div><h3>Regular testing</h3><p>Frequent tests with proper checking, so weak areas are caught early, not in the board exam.</p></div>
+        <div class="card"><div class="num">02</div><h3>Never miss a class</h3><p>Classes are recorded and uploaded to the PP Campus app, so a missed lecture can be watched again.</p></div>
+        <div class="card"><div class="num">03</div><h3>Discipline &amp; attention</h3><p>Small, focused batches, attendance tracking and regular updates to parents.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="library" class="alt">
+    <div class="wrap grid2" style="align-items:center">
+      <div>
+        <div class="eyebrow">PP Campus Library</div>
+        <h2>A quiet place to study</h2>
+        <p class="small" style="font-size:1rem">PP Campus also runs a self-study library at the same campus, with a disciplined environment for students preparing for boards and competitive exams.</p>
+      </div>
+      <div class="card">
+        <h3>Want a seat?</h3>
+        <p>Call or WhatsApp us to know about seat availability and timings.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://wa.me/918562013974?text=Hello%2C%20I%20want%20to%20know%20about%20PP%20Campus%20Library%20seats." target="_blank" rel="noopener">Ask about Library</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="offer">
+    <div class="wrap">
+      <div class="offer">
+        <div>
+          <div class="eyebrow">Free for Class 12 students</div>
+          <h2>2 Free Offline Pre-Boards + Question Bank</h2>
+          <p>Write two full pre-board papers at PP Campus, get them checked by us, and receive our Accountancy / Business Studies question bank free.</p>
+          <p class="small" style="color:inherit;opacity:.85">Fill the form. It opens WhatsApp with your details so we can confirm your slot.</p>
+        </div>
+        <form id="leadForm">
+          <div><label for="name">Student name</label><input id="name" required autocomplete="name"></div>
+          <div><label for="phone">Phone (WhatsApp)</label><input id="phone" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit number"></div>
+          <div><label for="cls">Class</label>
+            <select id="cls"><option>Class 12</option><option>Class 11</option></select></div>
+          <div><label for="board">Board</label>
+            <select id="board"><option>RBSE</option><option>CBSE</option></select></div>
+          <button class="btn btn-primary" type="submit">Book my free pre-boards</button>
+          <div class="small">We only use your number to contact you about PP Campus.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="alt">
+    <div class="wrap grid2">
+      <div>
+        <div class="eyebrow">Visit us</div>
+        <h2>PP Campus</h2>
+        <ul class="contact-list">
+          <li><b>Address</b>Jai Kashinath Tower, Jasa Singh Marg, Basanti Chowk, Sri Ganganagar, Rajasthan 335001</li>
+          <li><b>Phone / WhatsApp</b><a href="tel:+918562013974">+91 85620 13974</a></li>
+          <li><b>Timings</b>Evening batches. Call for current batch timings.</li>
+        </ul>
+        <p style="margin-top:20px"><a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Jai+Kashinath+Tower+Basanti+Chowk+Sri+Ganganagar">Open in Google Maps</a></p>
+      </div>
+      <iframe title="PP Campus location" loading="lazy" src="https://www.google.com/maps?q=Jai+Kashinath+Tower,+Basanti+Chowk,+Sri+Ganganagar&output=embed"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> PP Campus, Sri Ganganagar</span>
+    <span>Accountancy · Business Studies · Library</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/918562013974?text=Hello%20PP%20Campus" target="_blank" rel="noopener">WhatsApp</a>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.getElementById('leadForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('name').value.trim(),
+      p=document.getElementById('phone').value.trim(),
+      c=document.getElementById('cls').value,
+      b=document.getElementById('board').value;
+  var msg='Hello PP Campus, I want to book the 2 free offline pre-boards and get the question bank.\nName: '+n+'\nPhone: '+p+'\nClass: '+c+'\nBoard: '+b;
+  window.open('https://wa.me/918562013974?text='+encodeURIComponent(msg),'_blank');
+});
+</script>
+</body>
+</html>
