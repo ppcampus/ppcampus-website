@@ -11,127 +11,185 @@
 <meta name="theme-color" content="#0A0165">
 <link rel="icon" type="image/png" href="logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0A0165; --navy-2:#1a1190; --black:#000; --white:#fff;
-  --bg:#ffffff; --surface:#f4f3fb; --ink:#0b0b12; --muted:#4f4f63;
-  --line:#e2e0f0; --brand:#0A0165; --brand-ink:#ffffff; --tint:#ecebfa;
+  --navy:#0A0165; --violet:#6c5cff; --ink:#0b0b12; --muted:#4f4f63;
+  --bg:#ffffff; --soft:#f5f4fc; --line:#e4e2f2; --brand:#0A0165;
+  --dark:#05040c; --dark2:#0b0a1c; --card:#0e0b33; --cardline:#24206a;
+  --wa:#075E54; --wa2:#0a7a6d; --red:#8B1A1A;
 }
 @media (prefers-color-scheme: dark){
-  :root{
-    --bg:#07060f; --surface:#100e22; --ink:#f2f1fa; --muted:#b4b2c9;
-    --line:#26233f; --brand:#a9a4ff; --brand-ink:#0A0165; --tint:#1a1733;
-  }
+  :root{ --bg:#0d0c18; --soft:#12101f; --ink:#f2f1fa; --muted:#b4b2c9; --line:#26233f; --brand:#a9a4ff; }
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
 a{color:inherit}
 img{max-width:100%;display:block}
+svg{display:block}
 .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
-h1,h2,h3{font-family:"Archivo Black",Inter,sans-serif;font-weight:400;line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
+h1,h2,h3{font-family:"Archivo Black",Inter,sans-serif;font-weight:400;line-height:1.1;margin:0 0 .45em;letter-spacing:-.01em}
 h2{font-size:clamp(1.7rem,3.6vw,2.4rem)}
-h3{font-size:1.2rem}
-.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);font-weight:700;margin-bottom:8px}
+h3{font-size:1.15rem}
+.eyebrow{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--violet);font-weight:800;margin-bottom:8px}
+section{padding:64px 0}
+.ic{width:22px;height:22px;flex:0 0 22px}
 
-/* header (always white so the logo reads correctly) */
-header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #e2e0f0;color:#0b0b12}
-.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #e8e6f4;color:#0b0b12}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo img{width:44px;height:auto}
-.logo b{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:1.45rem;color:#000;letter-spacing:.01em}
+.logo img{width:42px;height:auto}
+.logo b{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:1.35rem;color:#000;white-space:nowrap}
 .logo b span{color:#0A0165}
-.nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
-.nav ul a{text-decoration:none;color:#33334a;font-weight:600;font-size:.95rem}
-.nav ul a:hover{color:#0A0165}
-.logo b{white-space:nowrap}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:#33334a;font-weight:600;font-size:.95rem;white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent}
+.nav ul a:hover,.nav ul a.on{color:#0A0165;border-color:#0A0165}
 @media(max-width:1020px){.nav ul{display:none}}
-.nav ul a{white-space:nowrap}
-@media(max-width:420px){.logo b{font-size:1.15rem}.logo img{width:36px}.call{padding:8px 10px;font-size:.9rem}}
-@media(max-width:860px){#about .photo{display:none}}
-.call{background:#8B1A1A;color:#fff;text-decoration:none;font-weight:800;padding:9px 14px;border-radius:10px;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;letter-spacing:.02em;box-shadow:inset 0 -2px 0 rgba(0,0,0,.2)}
-.call::before{content:"";width:20px;height:20px;flex:0 0 20px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000000' stroke='%23ffffff' stroke-width='1.6' stroke-linejoin='round'%3E%3Cpath d='M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z'/%3E%3C/svg%3E") center/contain no-repeat}
+.call{background:var(--red);color:#fff;text-decoration:none;font-weight:800;padding:9px 16px;border-radius:10px;white-space:nowrap;display:inline-flex;align-items:center;gap:9px;letter-spacing:.02em;box-shadow:inset 0 -2px 0 rgba(0,0,0,.22)}
+.call svg{width:19px;height:19px;flex:0 0 19px}
 .call:hover{background:#a52222}
+@media(max-width:420px){.logo b{font-size:1.1rem}.logo img{width:34px}.call{padding:8px 11px;font-size:.92rem}}
 
-.btn{display:inline-block;padding:13px 22px;border-radius:12px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;font-family:inherit}
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 22px;border-radius:12px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;font-family:inherit;white-space:nowrap}
+.btn svg{width:19px;height:19px;flex:0 0 19px}
 .btn-white{background:#fff;color:#0A0165}
-.btn-outline-w{border-color:rgba(255,255,255,.6);color:#fff}
-.btn-navy{background:var(--brand);color:var(--brand-ink)}
-.btn-outline{border-color:var(--brand);color:var(--brand)}
+.btn-wa{background:var(--wa);color:#fff;border-color:var(--wa)}
+.btn-wa:hover{background:var(--wa2);border-color:var(--wa2)}
+.btn-ghost-d{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-ghost{border-color:var(--brand);color:var(--brand);background:transparent}
 
-/* hero: black, photo blends with its black background */
-.hero{background:#000;color:#fff;overflow:hidden;position:relative}
-.hero::before{content:"";position:absolute;inset:auto -10% -40% auto;width:60%;height:120%;background:radial-gradient(closest-side,rgba(26,17,144,.55),transparent);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:end;gap:24px;position:relative}
-.hero-text{padding:72px 0 64px}
-.hero h1{font-size:clamp(2.2rem,5.4vw,3.8rem);color:#fff}
-.hero h1 span{color:#c4c0ff;text-shadow:0 0 8px rgba(196,192,255,.95),0 0 22px rgba(130,116,255,.9),0 0 46px rgba(90,70,255,.75)}
-.hero .lead{font-size:1.15rem;color:#c9c8d8;max-width:38ch}
-.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
-.chip{border:1px solid rgba(255,255,255,.28);color:#fff;padding:5px 12px;border-radius:999px;font-size:.85rem;font-weight:600}
-.hero-photo{align-self:end}
-.hero-photo img{width:100%;max-width:520px;margin-left:auto}
-.nameplate{position:absolute;right:16px;bottom:20px;background:#0A0165;color:#fff;padding:10px 16px;border-radius:12px;font-weight:700;line-height:1.3;box-shadow:0 10px 30px rgba(0,0,0,.4)}
-.nameplate small{display:block;font-weight:500;color:#c9c6ff}
-.hero-photo img{-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent),linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,#000 80%,transparent),linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);mask-composite:intersect}
-@media(max-width:860px){
-  .hero::before{display:none}
-  .hero .eyebrow{font-size:.7rem;letter-spacing:.1em}
-  .hero .ctas .btn{white-space:nowrap;font-size:.95rem}
-  .hero-grid{grid-template-columns:1fr;gap:0}
-  .hero-photo{order:-1;display:flex;flex-direction:column;align-items:center;padding-top:20px}
-  .hero-photo img{width:auto;height:280px;max-width:100%;margin:0 auto;object-fit:cover;object-position:center top;
-    -webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 98%);mask-image:linear-gradient(to bottom,#000 55%,transparent 98%)}
-  .nameplate{position:static;margin-top:-34px;text-align:center;font-size:.95rem;padding:8px 14px;box-shadow:none}
-  .nameplate small{font-size:.8rem}
-  .hero-text{padding:22px 0 36px;text-align:center}
-  .hero .lead{margin-inline:auto;font-size:1.02rem}
-  .hero h1{font-size:2rem}
-  .ctas,.chips{justify-content:center}
-  .hero .ctas .btn{flex:1 1 150px;text-align:center;padding:13px 12px}
-}
-@media(max-width:600px){
-  .wa-float{width:54px;height:54px;padding:0;font-size:0;display:flex;align-items:center;justify-content:center}
-  .wa-float::before{content:"";width:28px;height:28px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.4.4 0 0 0 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z'/%3E%3C/svg%3E") center/contain no-repeat}
-}
+/* ---------- hero ---------- */
+.hero{background:radial-gradient(1200px 500px at 85% 10%,#14106a 0%,rgba(20,16,106,0) 55%),var(--dark);color:#fff;padding:0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:end;gap:16px}
+.hero-text{padding:56px 0 28px}
+.hero .eyebrow{color:#a9a4ff}
+.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);color:#fff}
+.hero h1 .pp{background:linear-gradient(90deg,#5b5cff,#8f7dff);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.hero .lead{font-size:1.1rem;color:#d0cfe0;max-width:40ch;margin:0}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.hero-photo{position:relative;align-self:end;display:flex;justify-content:center}
+.hero-photo::before{content:"";position:absolute;width:86%;aspect-ratio:1;border-radius:50%;left:50%;top:6%;transform:translateX(-50%);background:radial-gradient(circle at 50% 45%,#2a20c9 0%,#170f8f 45%,rgba(10,1,101,0) 72%)}
+.hero-photo img{position:relative;width:100%;max-width:470px;-webkit-mask-image:linear-gradient(to bottom,#000 82%,transparent);mask-image:linear-gradient(to bottom,#000 82%,transparent)}
+.sign{position:absolute;right:-4px;top:30%;font-family:Caveat,cursive;font-size:3rem;color:#c9c6ff;transform:rotate(-12deg);text-shadow:0 0 18px rgba(108,92,255,.6);pointer-events:none}
 
-/* app */
-.app-cta{display:flex;align-items:center;gap:14px;margin-top:14px;max-width:460px;width:100%;padding:12px 14px 12px 12px;border-radius:18px;
-  background:linear-gradient(180deg,#140a8a,#0A0165);color:#fff;text-decoration:none;text-align:left;line-height:1.2;
-  border:1.5px solid rgba(201,198,255,.55);box-shadow:0 10px 30px rgba(10,1,101,.55),inset 0 1px 0 rgba(255,255,255,.12);animation:appGlow 2.6s ease-in-out infinite}
-.app-cta .ai{flex:0 0 54px;height:54px;border-radius:14px;background:#fff;display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.35)}
-.app-cta .ai img{width:38px;height:auto}
-.app-cta .t{font-weight:800;font-size:1.12rem;display:block}
-.app-cta .os{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
-.app-cta .os span{font-size:.72rem;font-weight:700;letter-spacing:.02em;color:#0A0165;background:#e9e7ff;padding:3px 8px;border-radius:999px}
-.app-cta .go{margin-left:auto;flex:0 0 34px;height:34px;border-radius:50%;background:#fff;color:#0A0165;display:grid;place-items:center;font-size:1.3rem;font-weight:800}
+/* app card */
+.app-cta{display:flex;align-items:center;gap:16px;margin:8px 0 0;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#1a0fa0,#0A0165);color:#fff;text-decoration:none;border:1.5px solid rgba(169,164,255,.55);box-shadow:0 12px 34px rgba(10,1,101,.55)}
+.app-cta .ai{flex:0 0 64px;height:64px;border-radius:16px;background:#fff;display:grid;place-items:center}
+.app-cta .ai img{width:46px}
+.app-cta .t{font-weight:800;font-size:1.2rem;display:block;line-height:1.2}
+.app-cta .d{display:block;font-size:.85rem;color:#d6d3ff;margin-top:3px}
+.app-cta .os{display:flex;gap:6px;margin-top:7px}
+.app-cta .os span{font-size:.75rem;font-weight:800;color:#0A0165;background:#e9e7ff;padding:2px 10px;border-radius:999px}
+.app-cta .go{margin-left:auto;flex:0 0 38px;height:38px;border-radius:50%;background:#fff;color:#0A0165;display:grid;place-items:center}
+.app-cta .go svg{width:18px;height:18px}
 .app-cta:hover{border-color:#fff}
-.app-cta:active{transform:scale(.98)}
-@keyframes appGlow{0%,100%{box-shadow:0 10px 30px rgba(10,1,101,.55),0 0 0 0 rgba(143,137,255,.0)}50%{box-shadow:0 10px 30px rgba(10,1,101,.55),0 0 0 6px rgba(143,137,255,.28)}}
-@media(prefers-reduced-motion:reduce){.app-cta{animation:none}}
-@media(max-width:860px){.app-cta{margin-inline:auto}}
-@media(max-width:440px){.app-cta .os span:nth-child(3){display:none}.app-cta .t{font-size:.98rem;white-space:nowrap}.app-cta{gap:11px}}
-/* WhatsApp buttons: always green with icon */
-.btn-wa{background:#075E54!important;color:#fff!important;border-color:#075E54!important;display:inline-flex;align-items:center;justify-content:center;gap:8px}
-.btn-wa::before{content:"";width:20px;height:20px;flex:0 0 20px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.4.4 0 0 0 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z'/%3E%3C/svg%3E") center/contain no-repeat}
-.btn-wa:hover{background:#0a7a6d!important;border-color:#0a7a6d!important}
-.appsec{background:#0A0165;color:#fff}
-.appsec .eyebrow{color:#a9a4ff}
-.appsec h2{color:#fff}
-.muted{color:#c9c6ff}
-.appsec .small{color:#c9c6ff}
-.app-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:32px;align-items:center}
-@media(max-width:860px){.app-grid{grid-template-columns:1fr}.qr-card{display:none!important}}
-.store-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-.store{display:flex;align-items:center;gap:10px;background:#000;color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:12px;padding:10px 16px;cursor:pointer;font:inherit;font-weight:700;text-align:left;flex:1 1 200px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0 6px}
+.chip{border:1px solid rgba(255,255,255,.3);color:#fff;padding:6px 16px;border-radius:999px;font-size:.88rem;font-weight:600}
+.feats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:22px 0 34px;text-align:center}
+.feats div{display:flex;flex-direction:column;align-items:center;gap:4px}
+.feats svg{width:38px;height:38px;color:#8f7dff;margin-bottom:6px}
+.feats b{font-weight:800;font-size:1rem}
+.feats span{font-size:.85rem;color:#b8b6cc}
+
+@media(max-width:860px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-photo{order:-1;padding-top:16px}
+  .hero-photo img{max-width:230px}
+  .hero-photo::before{width:250px;top:8%}
+  .sign{font-size:2.2rem;right:6%;top:26%}
+  .hero-text{padding:8px 0 10px;text-align:center}
+  .hero h1{font-size:2.1rem}
+  .hero .lead{margin-inline:auto;font-size:1rem}
+  .ctas{justify-content:center}
+  .ctas .btn{flex:1 1 150px;padding:13px 10px;font-size:.95rem}
+  .feats{grid-template-columns:repeat(2,1fr);row-gap:22px}
+}
+@media(max-width:440px){.app-cta{gap:12px;padding:12px}.app-cta .ai{flex-basis:54px;height:54px}.app-cta .ai img{width:38px}.app-cta .t{font-size:1.02rem}.app-cta .d{font-size:.78rem}}
+
+/* ---------- light / dark sections ---------- */
+.light{background:var(--soft)}
+.dark{background:var(--dark2);color:#fff}
+.dark .eyebrow{color:#a9a4ff}
+.muted{color:var(--muted)}
+.dark .muted{color:#b8b6cc}
+
+/* app section */
+.app-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.store{display:flex;align-items:center;gap:14px;width:100%;background:#000;color:#fff;border:0;border-radius:12px;padding:12px 18px;cursor:pointer;font:inherit;font-weight:700;font-size:1.05rem;text-align:left;margin-bottom:12px}
 .store small{display:block;font-weight:500;font-size:.75rem;color:#c9c8d8}
-.store .ic{font-size:1.5rem;width:26px;text-align:center}
-.store:hover{border-color:#fff}
-.code-inline{font-family:ui-monospace,Menlo,monospace;background:#fff;color:#0A0165;padding:1px 7px;border-radius:6px;letter-spacing:.06em;font-weight:800}
-.qr-card{background:#fff;color:#0b0b12;border-radius:18px;padding:18px;display:flex;gap:14px;align-items:center;font-size:.9rem}
-#qr{flex:0 0 120px;width:120px;height:120px}#qr img,#qr canvas{width:120px!important;height:120px!important;display:block}
+.store svg{width:26px;height:26px;flex:0 0 26px}
+.store:hover{background:#1a1a24}
+.code-inline{font-family:ui-monospace,Menlo,monospace;background:#fff;color:#0A0165;border:1px solid #c9c6ff;padding:1px 7px;border-radius:6px;letter-spacing:.06em;font-weight:800}
+.qr-card{display:flex;gap:14px;align-items:center;font-size:.88rem;color:var(--muted);margin-top:6px}
+#qr{flex:0 0 96px;width:96px;height:96px;background:#fff;padding:4px;border-radius:8px}
+#qr img,#qr canvas{width:88px!important;height:88px!important}
+@media(max-width:860px){.app-grid{grid-template-columns:1fr;gap:18px}.qr-card{display:none!important}}
+
+/* courses */
+.head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+.dcard{background:linear-gradient(180deg,#0f0c3a,#0a0829);border:1px solid var(--cardline);border-radius:18px;padding:24px}
+.dcard p{color:#c3c1d8;margin:0}
+.course{display:grid;grid-template-columns:auto 1fr;gap:18px}
+.course .cic{width:52px;height:52px;color:#8f7dff}
+.tag{display:inline-block;background:#2a20c9;color:#fff;font-weight:700;font-size:.75rem;padding:3px 10px;border-radius:999px;margin-bottom:10px}
+.num{font-family:"Archivo Black",sans-serif;font-size:2.4rem;line-height:1;margin-bottom:12px;background:linear-gradient(90deg,#5b5cff,#8f7dff);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+
+/* about */
+.about{display:grid;grid-template-columns:.8fr 1.3fr auto;gap:28px;align-items:center}
+.about .ph{position:relative;max-width:300px}
+.about .ph::before{content:"";position:absolute;inset:18% 4% 0 4%;background:#c9c6ff;border-radius:48% 52% 0 0/40% 40% 0 0}
+.about .ph img{position:relative;-webkit-mask-image:linear-gradient(to bottom,#000 88%,transparent);mask-image:linear-gradient(to bottom,#000 88%,transparent)}
+@media(max-width:860px){.about{grid-template-columns:1fr;text-align:center}.about .ph{margin:0 auto;max-width:240px}.about .btn{justify-self:center}}
+
+/* library */
+.lib{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.lib-ph{border-radius:18px;border:2px dashed var(--line);min-height:220px;display:grid;place-items:center;text-align:center;color:var(--muted);padding:20px;background:var(--bg)}
+@media(max-width:860px){.lib{grid-template-columns:1fr}}
+
+/* offer */
+.offer{background:linear-gradient(120deg,#0A0165,#1a0fa0);color:#fff;padding:40px 0}
+.offer .row{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.offer .eyebrow{color:#c9c6ff}
+.offer h2{color:#fff;margin-bottom:8px}
+.offer p{margin:0;color:#dcdaff;max-width:60ch}
+#leadForm{background:#fff;color:#0b0b12;border-radius:18px;padding:20px;display:grid;gap:12px;grid-template-columns:repeat(2,1fr);margin-top:22px}
+#leadForm[hidden]{display:none}
+#leadForm label{font-weight:700;font-size:.85rem}
+#leadForm input,#leadForm select{width:100%;padding:11px;border-radius:10px;border:1px solid #d6d4e8;background:#fff;color:#0b0b12;font:inherit;margin-top:4px}
+#leadForm .full{grid-column:1/-1}
+@media(max-width:600px){#leadForm{grid-template-columns:1fr}}
+.small{font-size:.85rem;color:#5a5a70}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:start}
+.clist{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:14px}
+.clist li{display:flex;gap:12px;align-items:flex-start}
+.clist svg{width:22px;height:22px;flex:0 0 22px;color:#c62828;margin-top:2px}
+iframe{width:100%;height:300px;border:0;border-radius:18px}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--dark);color:#c9c8d8;padding:24px 0;font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+footer .flogo{display:flex;align-items:center;gap:10px;text-decoration:none}
+footer .flogo span{background:#fff;border-radius:10px;padding:4px;display:inline-flex}
+footer .flogo img{width:30px}
+footer .flogo b{font-family:"Archivo Black",sans-serif;font-weight:400;color:#fff}
+footer nav{display:flex;gap:20px;flex-wrap:wrap}
+footer nav a{text-decoration:none;color:#d6d4e8}
+footer nav a:hover{color:#fff}
+@media(max-width:700px){footer .wrap{flex-direction:column;text-align:center}footer nav{justify-content:center;gap:14px 18px}}
+.copy-line{width:100%;text-align:center;font-size:.8rem;color:#8d8ba3;margin-top:4px}
+
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:30;background:var(--wa);color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.35);text-decoration:none}
+.wa-float svg{width:30px;height:30px}
+
 /* modal */
 .modal{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.6);display:flex;align-items:flex-end;justify-content:center}
 .modal[hidden]{display:none}
@@ -157,227 +215,189 @@ header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid 
 .help{font-size:.88rem;color:#4f4f63;margin:6px 0 0}.help a{color:#0A0165;font-weight:700}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#000;color:#fff;padding:10px 16px;border-radius:999px;font-weight:700;z-index:60;font-size:.9rem}
 
-/* strip */
-.strip{background:#0A0165;color:#fff}
-.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-block:22px;text-align:center}
-.strip b{display:block;font-family:"Archivo Black",sans-serif;font-weight:400;font-size:1.2rem}
-.strip span{font-size:.88rem;color:#c9c6ff}
-@media(max-width:700px){.strip .wrap{grid-template-columns:repeat(2,1fr)}}
 
-section{padding:68px 0}
-.alt{background:var(--surface)}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-@media(max-width:860px){.grid3,.grid2{grid-template-columns:1fr}}
-.card{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:26px}
-.card p{color:var(--muted);margin:0}
-.card .tag{display:inline-block;background:var(--tint);color:var(--brand);font-weight:700;font-size:.78rem;padding:4px 10px;border-radius:999px;margin-bottom:12px}
-.num{font-family:"Archivo Black",sans-serif;font-size:2.2rem;color:var(--brand);line-height:1;margin-bottom:10px}
-
-/* about */
-.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:center}
-.about .photo{background:#000;border-radius:22px;overflow:hidden}
-.about p{color:var(--muted)}
-@media(max-width:860px){.about{grid-template-columns:1fr}.about .photo{max-width:360px}}
-
-/* offer */
-.offer{background:#000;color:#fff;border-radius:24px;padding:38px;display:grid;grid-template-columns:1.15fr 1fr;gap:32px;align-items:start;position:relative;overflow:hidden}
-.offer::after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:#0A0165;opacity:.7}
-.offer > *{position:relative;z-index:1}
-.offer h2{color:#fff}
-.offer .eyebrow{color:#8f89ff}
-.offer p{color:#d3d2e2}
-@media(max-width:860px){.offer{grid-template-columns:1fr;padding:24px}}
-form{background:#fff;color:#0b0b12;border-radius:18px;padding:22px;display:grid;gap:12px}
-label{font-weight:700;font-size:.88rem}
-input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #d6d4e8;background:#fff;color:#0b0b12;font:inherit;margin-top:4px}
-input:focus,select:focus{outline:2px solid #0A0165;outline-offset:1px}
-form .btn{background:#0A0165;color:#fff;width:100%}
-.small{font-size:.85rem;color:#5a5a70}
-
-/* contact */
-.contact-list{list-style:none;padding:0;margin:0;display:grid;gap:16px}
-.contact-list b{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--brand)}
-iframe{width:100%;height:340px;border:0;border-radius:18px}
-
-footer{background:#000;color:#c9c8d8;padding:30px 0;font-size:.9rem}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-footer .flogo{display:flex;align-items:center;gap:10px}
-footer .flogo span{background:#fff;border-radius:10px;padding:4px;display:inline-flex}
-footer .flogo img{width:32px}
-footer b{font-family:"Archivo Black",sans-serif;font-weight:400;color:#fff}
-
-.wa-float{position:fixed;right:16px;bottom:16px;z-index:30;background:#075E54;color:#fff;font-weight:800;text-decoration:none;padding:12px 18px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
 </style>
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.4.4 0 0 0 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></symbol>
+  <symbol id="i-call" viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5M22 10v6"/></symbol>
+  <symbol id="i-board" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h5"/><path d="M14 2v6h6v4M8 9h2M8 13h5M8 17h2"/><circle cx="17" cy="18" r="4"/><path d="M17 16.5V18l1 1"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/><path d="m8 12 3 3 9-9"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m10 9 5 3-5 3z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16a2 2 0 0 0-2-2H2zM22 5a2 2 0 0 0-2-2h-6a2 2 0 0 0-2 2v16a2 2 0 0 1 2-2h8z"/><path d="M5 8h4M5 12h4M15 8h4M15 12h4"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="14" width="4" height="7" rx="1"/><rect x="10" y="10" width="4" height="11" rx="1"/><rect x="17" y="6" width="4" height="15" rx="1"/><path d="M3 10 9 5l4 3 7-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-gplay" viewBox="0 0 24 24"><path fill="currentColor" d="M5 3.5v17a.8.8 0 0 0 1.2.7L20 13.1a1.3 1.3 0 0 0 0-2.2L6.2 2.8A.8.8 0 0 0 5 3.5z"/></symbol>
+  <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7a4.5 4.5 0 0 0-3.5-1.9c-1.5-.2-2.9.9-3.7.9s-1.9-.9-3.2-.8a4.7 4.7 0 0 0-4 2.4c-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4s1.7-.8 3.1-.8 1.8.8 3.1.8 2.1-1.2 2.9-2.4a10 10 0 0 0 1.3-2.7 4.2 4.2 0 0 1-2.3-4zM14 5.4A4.2 4.2 0 0 0 15 2a4.3 4.3 0 0 0-2.8 1.5 4 4 0 0 0-1 3.2A3.6 3.6 0 0 0 14 5.4z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+</svg>
+
 <header>
   <div class="wrap nav">
-    <a href="#top" class="logo" aria-label="PP Campus home"><img src="logo-mark.png" alt="PP Campus logo" width="44" height="44"><b>PP <span>CAMPUS</span></b></a>
+    <a href="#top" class="logo" aria-label="PP Campus home"><img src="logo-mark.png" alt="PP Campus logo" width="42" height="42"><b>PP <span>CAMPUS</span></b></a>
     <ul>
+      <li><a href="#top" class="on">Home</a></li>
       <li><a href="#courses">Courses</a></li>
-      <li><a href="#about">PP Sir</a></li>
+      <li><a href="#app" data-app>App</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#library">Library</a></li>
-      <li><a href="#offer">Free Pre-Boards</a></li>
-      <li><a href="#app" data-app>Get App</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="tel:+918562013974" class="call" aria-label="Call 85620 13974">85620 13974</a>
+    <a href="tel:+918562013974" class="call" aria-label="Call 85620 13974"><svg style="color:#000"><use href="#i-call"/></svg>85620 13974</a>
   </div>
 </header>
 
 <main id="top">
-  <section class="hero" style="padding:0">
-    <div class="wrap hero-grid">
-      <div class="hero-text">
-        <div class="eyebrow" style="color:#8f89ff">Sri Ganganagar · Class 11 &amp; 12 Commerce</div>
-        <h1>Accountancy &amp; Business Studies with <span>PP&nbsp;Sir</span></h1>
-        <p class="lead">Clear concepts, regular tests and personal attention for RBSE and CBSE students at PP Campus, Basanti Chowk.</p>
-        <div class="ctas">
-          <a href="#offer" class="btn btn-white">Free Pre-Boards</a>
-          <a href="https://wa.me/918562013974?text=Hello%20PP%20Campus%2C%20I%20want%20to%20know%20about%20admission." class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="eyebrow">Sri Ganganagar · Class 11 &amp; 12 Commerce</div>
+          <h1>Accountancy &amp; Business Studies with <span class="pp">PP&nbsp;Sir</span></h1>
+          <p class="lead">Clear concepts, regular tests and personal attention for RBSE and CBSE students at PP Campus, Basanti Chowk.</p>
+          <div class="ctas">
+            <a href="#offer" class="btn btn-white" data-openform><svg><use href="#i-doc"/></svg>Free Pre-Boards</a>
+            <a href="https://wa.me/918562013974?text=Hello%20PP%20Campus%2C%20I%20want%20to%20know%20about%20admission." class="btn btn-wa" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp Us</a>
+          </div>
         </div>
-        <a href="#app" data-app class="app-cta"><span class="ai"><img src="logo-mark.png" alt="" width="38" height="38"></span><span><span class="t">Get the PP Campus App</span><span class="os"><span>Android</span><span>iPhone</span><span>Recorded classes</span></span></span><span class="go">›</span></a>
-        <div class="chips">
-          <span class="chip">RBSE</span><span class="chip">CBSE</span><span class="chip">Class 11</span><span class="chip">Class 12</span><span class="chip">Evening batches</span>
+        <div class="hero-photo">
+          <img src="pp-sir-cut.webp" alt="Pragyesh Bhardwaj (PP Sir), PP Campus" width="520" height="576" fetchpriority="high">
+          <span class="sign" aria-hidden="true">PP Sir</span>
         </div>
       </div>
-      <div class="hero-photo" style="position:relative">
-        <img src="pp-sir.webp" alt="Pragyesh Bhardwaj (PP Sir), PP Campus" width="640" height="709">
-        <div class="nameplate">Pragyesh Bhardwaj<small>PP Sir · Accountancy &amp; Business Studies</small></div>
+
+      <a href="#app" data-app class="app-cta">
+        <span class="ai"><img src="logo-mark.png" alt="" width="46" height="46"></span>
+        <span><span class="t">Get the PP Campus App</span><span class="d">Watch recorded classes, buy courses and study anytime.</span><span class="os"><span>Android</span><span>iPhone</span></span></span>
+        <span class="go"><svg><use href="#i-arrow"/></svg></span>
+      </a>
+
+      <div class="chips"><span class="chip">RBSE</span><span class="chip">CBSE</span><span class="chip">Class 11</span><span class="chip">Class 12</span><span class="chip">Evening batches</span></div>
+
+      <div class="feats">
+        <div><svg><use href="#i-cap"/></svg><b>Class 11 &amp; 12</b><span>Commerce</span></div>
+        <div><svg><use href="#i-board"/></svg><b>RBSE &amp; CBSE</b><span>Both boards</span></div>
+        <div><svg><use href="#i-check"/></svg><b>Regular Tests</b><span>Checked &amp; discussed</span></div>
+        <div><svg><use href="#i-play"/></svg><b>Recorded Classes</b><span>In the PP Campus app</span></div>
       </div>
     </div>
   </section>
 
-  <div class="strip">
-    <div class="wrap">
-      <div><b>Class 11 &amp; 12</b><span>Commerce</span></div>
-      <div><b>RBSE &amp; CBSE</b><span>Both boards</span></div>
-      <div><b>Regular Tests</b><span>Checked &amp; discussed</span></div>
-      <div><b>Recorded Classes</b><span>In the PP Campus app</span></div>
-    </div>
-  </div>
-
-  <section id="app" class="appsec">
+  <section id="app" class="light">
     <div class="wrap app-grid">
       <div>
         <div class="eyebrow">PP Campus App</div>
         <h2>All your classes &amp; courses in one app</h2>
-        <p class="muted">Watch recorded lectures, buy courses and study anytime. Your courses are linked to <b>your phone number</b>. Always log in with the same number.</p>
-        <div class="store-row">
-          <button class="store" data-app="android" type="button"><span class="ic">▶</span><span><small>Android phone</small>Get it on Google Play</span></button>
-          <button class="store" data-app="ios" type="button"><span class="ic">📱</span><span><small>iPhone / iPad</small>Get it on App Store</span></button>
-        </div>
-        <p class="small muted" style="margin-top:12px">iPhone users need the org code <b class="code-inline">YUUGQB</b>. Tap the App Store button and we'll show you how.</p>
+        <p class="muted" style="margin:0">Watch recorded lectures, buy courses and study anytime. Your courses are linked to <b>your phone number</b>. Always log in with the same number.</p>
       </div>
-      <div class="qr-card" id="qrCard">
-        <div id="qr"></div>
-        <div><b>On a computer?</b><br>Scan with your phone camera to open the download steps on your phone.</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="courses">
-    <div class="wrap">
-      <div class="eyebrow">Courses</div>
-      <h2>What we teach</h2>
-      <div class="grid2" style="margin-top:26px">
-        <div class="card">
-          <span class="tag">Class 11 · Class 12</span>
-          <h3>Accountancy</h3>
-          <p>RBSE and CBSE. From journal entries and ledgers to partnership, company accounts and financial statement analysis, built step by step with plenty of practice.</p>
-        </div>
-        <div class="card">
-          <span class="tag">Class 11 · Class 12</span>
-          <h3>Business Studies</h3>
-          <p>RBSE and CBSE. Concept-wise teaching with board-style answer writing, so students know exactly how to score in descriptive questions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="alt">
-    <div class="wrap about">
-      <div class="photo"><img src="pp-sir.webp" alt="PP Sir" width="640" height="709" loading="lazy"></div>
       <div>
-        <div class="eyebrow">Meet your teacher</div>
-        <h2>Pragyesh Bhardwaj<br>(PP Sir)</h2>
-        <p>PP Sir teaches Accountancy and Business Studies to Class 11 and 12 students of both RBSE and CBSE boards. At PP Campus, every student gets regular tests, proper checking and personal attention, so preparation stays on track all year, not just before the exam.</p>
-        <div class="ctas"><a class="btn btn-wa" href="https://wa.me/918562013974?text=Hello%20PP%20Sir%2C%20I%20want%20to%20know%20about%20admission." target="_blank" rel="noopener">WhatsApp PP Sir</a></div>
+        <button class="store" data-app="android" type="button"><svg><use href="#i-gplay"/></svg><span><small>Android phone</small>Get it on Google Play</span></button>
+        <button class="store" data-app="ios" type="button"><svg><use href="#i-apple"/></svg><span><small>iPhone / iPad</small>Get it on App Store</span></button>
+        <p class="small muted" style="margin:2px 0 0">iPhone users need the org code <b class="code-inline">YUUGQB</b>. Tap the App Store button and we'll show you how.</p>
+        <div class="qr-card" id="qrCard"><div id="qr"></div><div><b>On a computer?</b><br>Scan with your phone camera to open the download steps on your phone.</div></div>
       </div>
     </div>
   </section>
 
-  <section id="why">
+  <section id="courses" class="dark">
+    <div class="wrap">
+      <div class="head-row">
+        <div><div class="eyebrow">Courses</div><h2 style="margin:0">What we teach</h2></div>
+        <a href="#app" data-app class="btn btn-ghost-d">View all courses <svg><use href="#i-right"/></svg></a>
+      </div>
+      <div class="grid2">
+        <div class="dcard course"><svg class="cic"><use href="#i-book"/></svg><div><span class="tag">Class 11 · Class 12</span><h3>Accountancy</h3><p>RBSE and CBSE. From journal entries and ledgers to partnership, company accounts and financial statement analysis, built step by step with plenty of practice.</p></div></div>
+        <div class="dcard course"><svg class="cic"><use href="#i-chart"/></svg><div><span class="tag">Class 11 · Class 12</span><h3>Business Studies</h3><p>RBSE and CBSE. Concept-wise teaching with board-style answer writing, so students know exactly how to score in descriptive questions.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="light">
+    <div class="wrap about">
+      <div class="ph"><img src="pp-sir-cut.webp" alt="PP Sir" width="520" height="576" loading="lazy"></div>
+      <div>
+        <div class="eyebrow">PP Campus Teacher</div>
+        <h2>Pragyesh Bhardwaj<br>(PP Sir)</h2>
+        <p class="muted" style="margin:0">PP Sir teaches Accountancy and Business Studies to Class 11 and 12 students of both RBSE and CBSE boards. At PP Campus, every student gets regular tests, proper checking and personal attention, so preparation stays on track all year, not just before the exam.</p>
+      </div>
+      <a class="btn btn-wa" href="https://wa.me/918562013974?text=Hello%20PP%20Sir%2C%20I%20want%20to%20know%20about%20admission." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp PP Sir</a>
+    </div>
+  </section>
+
+  <section id="why" class="dark">
     <div class="wrap">
       <div class="eyebrow">Why PP Campus</div>
       <h2>Built for board-exam results</h2>
-      <div class="grid3" style="margin-top:26px">
-        <div class="card"><div class="num">01</div><h3>Regular testing</h3><p>Frequent tests with proper checking, so weak areas are caught early, not in the board exam.</p></div>
-        <div class="card"><div class="num">02</div><h3>Never miss a class</h3><p>Classes are recorded and uploaded to the PP Campus app, so a missed lecture can be watched again.</p></div>
-        <div class="card"><div class="num">03</div><h3>Discipline &amp; attention</h3><p>Focused batches, attendance tracking and regular updates to parents.</p></div>
+      <div class="grid3" style="margin-top:22px">
+        <div class="dcard"><div class="num">01</div><h3>Regular testing</h3><p>Frequent tests with proper checking, so weak areas are caught early, not in the board exam.</p></div>
+        <div class="dcard"><div class="num">02</div><h3>Never miss a class</h3><p>Classes are recorded and uploaded to the PP Campus app, so a missed lecture can be watched again.</p></div>
+        <div class="dcard"><div class="num">03</div><h3>Discipline &amp; attention</h3><p>Focused batches, attendance tracking and regular updates to parents.</p></div>
       </div>
     </div>
   </section>
 
-  <section id="library" class="alt">
-    <div class="wrap grid2" style="align-items:center">
+  <section id="library" class="light">
+    <div class="wrap lib">
       <div>
         <div class="eyebrow">PP Campus Library</div>
         <h2>A quiet place to study</h2>
-        <p style="color:var(--muted)">PP Campus also runs a self-study library at the same campus, with a disciplined environment for students preparing for boards and competitive exams.</p>
+        <p class="muted">PP Campus also runs a self-study library at the same campus, with a disciplined environment for students preparing for boards and competitive exams.</p>
+        <a class="btn btn-wa" href="https://wa.me/918562013974?text=Hello%2C%20I%20want%20to%20know%20about%20PP%20Campus%20Library%20seats." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Ask about Library</a>
       </div>
-      <div class="card">
-        <h3>Want a seat?</h3>
-        <p>Call or WhatsApp us to know about seat availability and timings.</p>
-        <p style="margin-top:16px"><a class="btn btn-wa" href="https://wa.me/918562013974?text=Hello%2C%20I%20want%20to%20know%20about%20PP%20Campus%20Library%20seats." target="_blank" rel="noopener">Ask about Library</a></p>
-      </div>
+      <div class="lib-ph" id="libPhoto">Library photo coming soon</div>
     </div>
   </section>
 
-  <section id="offer">
+  <section id="offer" class="offer">
     <div class="wrap">
-      <div class="offer">
+      <div class="row">
         <div>
           <div class="eyebrow">Free for Class 12 students</div>
           <h2>2 Free Offline Pre-Boards + Question Bank</h2>
           <p>Write two full pre-board papers at PP Campus, get them checked by us, and receive our Accountancy / Business Studies question bank free.</p>
-          <p class="small" style="color:#a9a8bd">Fill the form. It opens WhatsApp with your details so we can confirm your slot.</p>
         </div>
-        <form id="leadForm">
-          <div><label for="name">Student name</label><input id="name" required autocomplete="name"></div>
-          <div><label for="phone">Phone (WhatsApp)</label><input id="phone" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit number"></div>
-          <div><label for="cls">Class</label><select id="cls"><option>Class 12</option><option>Class 11</option></select></div>
-          <div><label for="board">Board</label><select id="board"><option>RBSE</option><option>CBSE</option></select></div>
-          <button class="btn btn-wa" type="submit">Book on WhatsApp</button>
-          <div class="small">We only use your number to contact you about PP Campus.</div>
-        </form>
+        <button class="btn btn-white" type="button" data-openform><svg><use href="#i-doc"/></svg>Fill the Form on WhatsApp</button>
       </div>
+      <form id="leadForm" hidden>
+        <div><label for="name">Student name</label><input id="name" required autocomplete="name"></div>
+        <div><label for="phone">Phone (WhatsApp)</label><input id="phone" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit number"></div>
+        <div><label for="cls">Class</label><select id="cls"><option>Class 12</option><option>Class 11</option></select></div>
+        <div><label for="board">Board</label><select id="board"><option>RBSE</option><option>CBSE</option></select></div>
+        <button class="btn btn-wa full" type="submit"><svg><use href="#i-wa"/></svg>Send on WhatsApp</button>
+        <div class="small full">This opens WhatsApp with your details. We only use your number to contact you about PP Campus.</div>
+      </form>
     </div>
   </section>
 
-  <section id="contact" class="alt">
-    <div class="wrap grid2">
+  <section id="contact">
+    <div class="wrap contact">
       <div>
         <div class="eyebrow">Visit us</div>
         <h2>PP Campus</h2>
-        <ul class="contact-list">
-          <li><b>Address</b>Jai Kashinath Tower, Jasa Singh Marg, Basanti Chowk, Sri Ganganagar, Rajasthan 335001</li>
-          <li><b>Phone / WhatsApp</b><a href="tel:+918562013974">+91 85620 13974</a></li>
-          <li><b>Timings</b>Evening batches. Call for current batch timings.</li>
+        <ul class="clist">
+          <li><svg><use href="#i-pin"/></svg><span>Jai Kashinath Tower, Jasa Singh Marg, Basanti Chowk, Sri Ganganagar, Rajasthan 335001</span></li>
+          <li><svg><use href="#i-call"/></svg><a href="tel:+918562013974" style="text-decoration:none">+91 85620 13974</a></li>
+          <li><svg><use href="#i-clock"/></svg><span>Evening batches. Call for current batch timings.</span></li>
         </ul>
-        <p style="margin-top:22px"><a class="btn btn-outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Jai+Kashinath+Tower+Basanti+Chowk+Sri+Ganganagar">Open in Google Maps</a></p>
+        <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Jai+Kashinath+Tower+Basanti+Chowk+Sri+Ganganagar"><svg style="color:#c62828"><use href="#i-pin"/></svg>Open in Google Maps</a>
       </div>
-      <iframe title="PP Campus location" loading="lazy" src="https://www.google.com/maps?q=Jai+Kashinath+Tower,+Basanti+Chowk,+Sri+Ganganagar&output=embed"></iframe>
+      <iframe title="PP Campus location" loading="lazy" src="https://www.google.com/maps?q=Jai+Kashinath+Tower,+Basanti+Chowk,+Sri+Ganganagar&amp;output=embed"></iframe>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="flogo"><span><img src="logo-mark.png" alt=""></span><b>PP CAMPUS</b></div>
-    <div>© <span id="yr"></span> PP Campus, Sri Ganganagar · 85620 13974</div>
+    <a href="#top" class="flogo"><span><img src="logo-mark.png" alt=""></span><b>PP CAMPUS</b></a>
+    <nav><a href="#top">Home</a><a href="#courses">Courses</a><a href="#app" data-app>App</a><a href="#about">About</a><a href="#library">Library</a><a href="#contact">Contact</a></nav>
+    <a href="tel:+918562013974" class="call"><svg style="color:#000"><use href="#i-call"/></svg>85620 13974</a>
+    <div class="copy-line">© <span id="yr"></span> PP Campus, Sri Ganganagar</div>
   </div>
 </footer>
 
@@ -421,10 +441,11 @@ footer b{font-family:"Archivo Black",sans-serif;font-weight:400;color:#fff}
   </div>
 </div>
 
-<a class="wa-float" href="https://wa.me/918562013974?text=Hello%20PP%20Campus" target="_blank" rel="noopener">WhatsApp</a>
+<a class="wa-float" aria-label="WhatsApp PP Campus" href="https://wa.me/918562013974?text=Hello%20PP%20Campus" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg></a>
 
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
+document.querySelectorAll('[data-openform]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();var f=document.getElementById('leadForm');f.hidden=false;document.getElementById('offer').scrollIntoView({behavior:'smooth'});setTimeout(function(){document.getElementById('name').focus({preventScroll:true})},500)})});
 /* ---- App download helper ---- */
 (function(){
   var ORG='YUUGQB', modal=document.getElementById('appModal');
