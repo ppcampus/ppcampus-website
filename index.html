@@ -72,10 +72,26 @@ header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid 
 .hero-photo img{width:100%;max-width:520px;margin-left:auto}
 .nameplate{position:absolute;right:16px;bottom:20px;background:#0A0165;color:#fff;padding:10px 16px;border-radius:12px;font-weight:700;line-height:1.3;box-shadow:0 10px 30px rgba(0,0,0,.4)}
 .nameplate small{display:block;font-weight:500;color:#c9c6ff}
+.hero-photo img{-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent),linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,#000 80%,transparent),linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);mask-composite:intersect}
 @media(max-width:860px){
-  .hero-grid{grid-template-columns:1fr}
-  .hero-text{padding:48px 0 8px}
-  .hero-photo img{margin:0 auto;max-width:380px}
+  .hero::before{display:none}
+  .hero .eyebrow{font-size:.7rem;letter-spacing:.1em}
+  .hero .ctas .btn{white-space:nowrap;font-size:.95rem}
+  .hero-grid{grid-template-columns:1fr;gap:0}
+  .hero-photo{order:-1;display:flex;flex-direction:column;align-items:center;padding-top:20px}
+  .hero-photo img{width:auto;height:280px;max-width:100%;margin:0 auto;object-fit:cover;object-position:center top;
+    -webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 98%);mask-image:linear-gradient(to bottom,#000 55%,transparent 98%)}
+  .nameplate{position:static;margin-top:-34px;text-align:center;font-size:.95rem;padding:8px 14px;box-shadow:none}
+  .nameplate small{font-size:.8rem}
+  .hero-text{padding:22px 0 36px;text-align:center}
+  .hero .lead{margin-inline:auto;font-size:1.02rem}
+  .hero h1{font-size:2rem}
+  .ctas,.chips{justify-content:center}
+  .hero .ctas .btn{flex:1 1 150px;text-align:center;padding:13px 12px}
+}
+@media(max-width:600px){
+  .wa-float{width:54px;height:54px;padding:0;font-size:0;display:flex;align-items:center;justify-content:center}
+  .wa-float::before{content:"";width:28px;height:28px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2306200f'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.4.4 0 0 0 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z'/%3E%3C/svg%3E") center/contain no-repeat}
 }
 
 /* strip */
@@ -155,7 +171,7 @@ footer b{font-family:"Archivo Black",sans-serif;font-weight:400;color:#fff}
         <h1>Accountancy &amp; Business Studies with <span>PP&nbsp;Sir</span></h1>
         <p class="lead">Clear concepts, regular tests and personal attention for RBSE and CBSE students at PP Campus, Basanti Chowk.</p>
         <div class="ctas">
-          <a href="#offer" class="btn btn-white">Book 2 Free Pre-Boards</a>
+          <a href="#offer" class="btn btn-white">Free Pre-Boards</a>
           <a href="https://wa.me/918562013974?text=Hello%20PP%20Campus%2C%20I%20want%20to%20know%20about%20admission." class="btn btn-outline-w" target="_blank" rel="noopener">WhatsApp Us</a>
         </div>
         <div class="chips">
@@ -285,6 +301,7 @@ footer b{font-family:"Archivo Black",sans-serif;font-weight:400;color:#fff}
 
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
+(function(){var w=document.querySelector('.wa-float');function f(){w.style.opacity=scrollY>500?'1':'0';w.style.pointerEvents=scrollY>500?'auto':'none'}w.style.transition='opacity .25s';addEventListener('scroll',f,{passive:true});f();})();
 document.getElementById('leadForm').addEventListener('submit',function(e){
   e.preventDefault();
   var n=document.getElementById('name').value.trim(),
